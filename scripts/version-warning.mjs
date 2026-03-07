@@ -45,9 +45,8 @@ function getWorkspacePackages() {
         if (pkg.version) {
           packages[pkg.name] = pkg.version;
         }
-      } catch (err) {
-        // oxlint-disable-next-line no-console
-        console.error(`Error reading ${dir.name}/package.json:`, err);
+      } catch {
+        // Skip directories without a valid package.json
       }
     }
 
